@@ -1,0 +1,24 @@
+{
+  "name": "mutanthub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luizlc10/MutantHub.git"
+  },
+  "author": "Luiz Cláudio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luizlc10/MutantHub/issues"
+  },
+  "homepage": "https://github.com/Luizlc10/MutantHub#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3"
+  }
+}
