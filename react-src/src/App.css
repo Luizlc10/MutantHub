@@ -1,3 +1,38 @@
 .App {
   text-align: center;
 }
+/* ########  HEADER  #######*/
+header {
+  margin-top: 20px;
+}
+
+/* #####  MAIN CARD - CENTER*/
+.main-card {
+  min-height: auto;
+  max-width: 800px;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+}
+.navigation-bar ul{
+  margin: 40px 0 0 0;
+  padding: 0;
+}
+.navigation-bar li{
+  margin: 6px 0;
+  list-style-type: none;
+}
+.navigation-bar a{
+  padding: 12px 20px 12px 12px;
+  margin-right: -4px;
+  color: black;
+}
+.shadow-1{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.shadow-2{
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.09);
+}
+.full-w{
+  width: 100%;
+}
