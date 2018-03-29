@@ -1,5 +1,7 @@
 /*jshint esversion: 6 */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Routes from './routes';
 import './App.css';
 
 class App extends Component {
@@ -21,21 +23,21 @@ class App extends Component {
                 <ul>
 
                   <li className="nav-item active shadow-1">
-                    <a className="nav-link bg-warning btn" data-toggle="tooltip" data-placement="left" title="Search" href="">
-                      <i className="material-icons">search</i>
-                    </a>
+                    <Link to='/' className="nav-link bg-warning btn" data-toggle="tooltip" data-placement="left" title="Graphics">
+                      <i className="material-icons">data_usage</i>
+                    </Link>
                   </li>
                   <li className="nav-item active shadow-1">
-                    <a className="nav-link bg-warning btn" data-toggle="tooltip" data-placement="left" title="Graphics" href="">
-                      <i className="material-icons">data_usage</i>
-                    </a>
+                    <Link to='/search' className="nav-link bg-warning btn" data-toggle="tooltip" data-placement="left" title="Graphics">
+                      <i className="material-icons">search</i>
+                    </Link>
                   </li>
 
                 </ul>
             </div>
 
             <div className="col-12 col-sm-10  bg-light main-card shadow-1">
-              <h1>Router</h1>
+              <Routes />
             </div>
           </div>
 
