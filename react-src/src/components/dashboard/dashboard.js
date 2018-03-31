@@ -45,9 +45,11 @@ class Dashboard extends React.Component {
     fetch('https://mutanthub.herokuapp.com/reports/report-mutation', {
       method: 'GET',
       headers: {
+        'Access-Control-Allow-Origin':'*',
         'Accept': '*',
         'Content-Type': 'application/json',
-      }
+      },
+      mode: 'cors'
     })
     .then((response) => response.json())
     .then((responseJson) => {
