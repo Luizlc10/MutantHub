@@ -37,7 +37,7 @@ class App extends Component {
             </div>
 
             <div className="col-12 col-sm-10  bg-light main-card shadow-1">
-              <Routes />
+              <Routes className="main-card"/>
             </div>
           </div>
 
