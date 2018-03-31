@@ -1,15 +1,15 @@
 /*jshint esversion: 6 */
 import React from 'react';
-import './search.css';
+import './citizens.css';
 
-class Search extends React.Component {
+class Citizens extends React.Component {
   render() {
     return (
       <div className="">
-        <h1>Search</h1>
+        <h1>citizens</h1>
       </div>
     );
   }
 }
 
-export default Search;
+export default Citizens;
