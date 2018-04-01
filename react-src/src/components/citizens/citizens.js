@@ -10,11 +10,14 @@ class Citizens extends React.Component {
       name: "",
       age: "",
       gender: "male",
-      location: ""
+      location: "",
+      citizenIdUpdate: "",
+      locationUpdate: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.addCitizen = this.addCitizen.bind(this);
+    this.updateLocation = this.updateLocation.bind(this);
   }
 
   addCitizen(){
@@ -41,6 +44,27 @@ class Citizens extends React.Component {
     console.log(this.state);
   }
 
+  updateLocation(){
+    fetch('https://mutanthub.herokuapp.com/citizens/' + this.state.citizenIdUpdate, {
+      method: 'PATCH',
+      headers: {
+        'Accept': '*',
+        'Content-Type': 'application/json',
+      },
+      body: {
+        location: this.state.locationUpdate
+      }
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log(responseJson);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+    console.log(this.state);
+  }
+
   handleChange(event) {
     const name = event.target.name;
     this.setState({
@@ -48,12 +72,11 @@ class Citizens extends React.Component {
     });
   }
 
-
   render() {
     return (
       <div className="row">
         <div className="col-sm-12 col-md-6 p-3">
-          <p>Hello</p>
+          <h3>Add citizen</h3>
           <img className="mb-3" src={this.state.gender === 'female' ? 'user-f.png' : 'user-m.png'} height="200"/>
           <form>
             <div className="form-group">
@@ -81,7 +104,26 @@ class Citizens extends React.Component {
           </form>
         </div>
         <div className="col-sm-12 col-md-6 p-3">
-          hello
+          <div className="row h-50">
+            <div className="row">
+              <h3>Update citizen´s location</h3>
+            </div>
+            <div className="col-12 m-0">
+              <div className="form-group">
+                <input type="text" className="form-control" id="formGroupExampleInput" name="citizenIdUpdate"
+                        placeholder="Citizen id" value={this.state.citizenIdUpdate} onChange={this.handleChange}/>
+              </div>
+              <div className="form-group">
+                <input type="text" className="form-control" id="formGroupExampleInput" name="locationUpdate"
+                        placeholder="location" value={this.state.locationUpdate} onChange={this.handleChange}/>
+              </div>
+              <button className="btn btn-primary btn-lg btn-block" type="button" onClick={this.updateLocation}>Update</button>
+            </div>
+          </div>
+          <div className="row h-50">
+            <h3>Report mutation</h3>
+
+          </div>
         </div>
       </div>
     );
