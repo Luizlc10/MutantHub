@@ -12,12 +12,15 @@ class Citizens extends React.Component {
       gender: "male",
       location: "",
       citizenIdUpdate: "",
-      locationUpdate: ""
+      locationUpdate: "",
+      citizenIdMutation: "",
+      flag: 1
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.addCitizen = this.addCitizen.bind(this);
     this.updateLocation = this.updateLocation.bind(this);
+    this.setFlag = this.setFlag.bind(this);
   }
 
   addCitizen(){
@@ -65,6 +68,24 @@ class Citizens extends React.Component {
     console.log(this.state);
   }
 
+  setFlag(){
+    fetch('https://mutanthub.herokuapp.com/citizens/' + this.state.citizenIdMutation + "/" + this.state.flag, {
+      method: 'PATCH',
+      headers: {
+        'Accept': '*',
+        'Content-Type': 'application/json',
+      }
+    })
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log(responseJson);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+    console.log(this.state);
+  }
+
   handleChange(event) {
     const name = event.target.name;
     this.setState({
@@ -100,29 +121,45 @@ class Citizens extends React.Component {
               <input type="text" className="form-control" id="formGroupExampleInput3"
                       placeholder="Locations" name="location" value={this.state.location} onChange={this.handleChange}/>
             </div>
-            <button className="btn btn-primary btn-lg btn-block" type="button" onClick={this.addCitizen}>Add citizen</button>
+            <div className="col-12">
+              <button className="btn btn-success btn-lg align-self-center col-6" type="button" onClick={this.addCitizen}>Add citizen</button>
+            </div>
           </form>
         </div>
         <div className="col-sm-12 col-md-6 p-3">
           <div className="row h-50">
             <div className="row">
-              <h3>Update citizen´s location</h3>
+              <h3 className="ml-5">Update citizen´s location</h3>
             </div>
             <div className="col-12 m-0">
               <div className="form-group">
                 <input type="text" className="form-control" id="formGroupExampleInput" name="citizenIdUpdate"
                         placeholder="Citizen id" value={this.state.citizenIdUpdate} onChange={this.handleChange}/>
               </div>
-              <div className="form-group">
-                <input type="text" className="form-control" id="formGroupExampleInput" name="locationUpdate"
-                        placeholder="location" value={this.state.locationUpdate} onChange={this.handleChange}/>
+              <div className="col-12">
+                <button className="btn btn-success btn-lg align-self-center col-6" type="button" onClick={this.updateLocation}>Update</button>
               </div>
-              <button className="btn btn-primary btn-lg btn-block" type="button" onClick={this.updateLocation}>Update</button>
             </div>
           </div>
-          <div className="row h-50">
-            <h3>Report mutation</h3>
-
+          <div className="row h-50 align-items-end">
+            <div className="row">
+              <h3 className="ml-5">Report mutation</h3>
+            </div>
+            <div className="col-12 m-0">
+              <div className="form-group">
+                <input type="text" className="form-control" id="formGroupExampleInput" name="citizenIdMutation"
+                        placeholder="Citizen id" value={this.state.citizenIdMutation} onChange={this.handleChange}/>
+              </div>
+              <div className="form-group">
+                <select className="form-control" name="flag" onChange={this.handleChange}>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+              </div>
+              <div className="col-12">
+                <button className="btn btn-success btn-lg align-self-center col-6" type="button" onClick={this.setFlag}>Update</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
