@@ -28,8 +28,8 @@ class App extends Component {
                     </Link>
                   </li>
                   <li className="nav-item active shadow-1">
-                    <Link to='/search' className="nav-link bg-warning btn" data-toggle="tooltip" data-placement="left" title="Graphics">
-                      <i className="material-icons">search</i>
+                    <Link to='/citizens' className="nav-link bg-warning btn" data-toggle="tooltip" data-placement="left" title="Graphics">
+                      <i className="material-icons">people</i>
                     </Link>
                   </li>
 
@@ -37,7 +37,7 @@ class App extends Component {
             </div>
 
             <div className="col-12 col-sm-10  bg-light main-card shadow-1">
-              <Routes />
+              <Routes className="main-card"/>
             </div>
           </div>
 

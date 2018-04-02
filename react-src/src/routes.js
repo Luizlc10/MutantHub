@@ -2,13 +2,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Search from './components/search/search';
+import Citizens from './components/citizens/citizens';
 import Dashboard from './components/dashboard/dashboard';
 
 const Routes = () => (
     <Switch>
       <Route exact path='/' component={Dashboard}/>
-      <Route path='/search' component={Search}/>
+      <Route path='/citizens' component={Citizens}/>
     </Switch>
 )
 
