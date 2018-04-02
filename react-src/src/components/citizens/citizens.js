@@ -137,7 +137,7 @@ class Citizens extends React.Component {
                         placeholder="Citizen id" value={this.state.citizenIdUpdate} onChange={this.handleChange}/>
               </div>
               <div className="col-12">
-                <button className="btn btn-success btn-lg align-self-center col-6" type="button" onClick={this.updateLocation}>Update</button>
+                <button className="btn btn-success btn-lg align-self-center col-6" type="button" onClick={this.updateLocation}>Update location</button>
               </div>
             </div>
           </div>
@@ -157,7 +157,7 @@ class Citizens extends React.Component {
                 </select>
               </div>
               <div className="col-12">
-                <button className="btn btn-success btn-lg align-self-center col-6" type="button" onClick={this.setFlag}>Update</button>
+                <button className="btn btn-success btn-lg align-self-center col-6" type="button" onClick={this.setFlag}>Flag citizen</button>
               </div>
             </div>
           </div>
